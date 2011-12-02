@@ -64,6 +64,8 @@ public class S3Wagon
      */
     public S3Wagon()
     {
+        this.typeMap.addMimeTypes("application/xml pom");
+        this.typeMap.addMimeTypes("text/plain md5 sha1");
     }
 
     /**
