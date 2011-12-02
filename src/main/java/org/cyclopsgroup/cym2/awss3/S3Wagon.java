@@ -50,6 +50,10 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 public class S3Wagon
     extends StreamWagon
 {
+    private static final int HOURS_TO_EXPIRE =
+        Integer.valueOf(
+            System.getProperty("maven.wagon.s3.expiration.hours", "0"));
+
     private final MimetypesFileTypeMap typeMap = new MimetypesFileTypeMap();
 
     private String bucketName;
@@ -65,6 +69,36 @@ public class S3Wagon
     {
         this.typeMap.addMimeTypes("application/xml pom");
         this.typeMap.addMimeTypes("text/plain md5 sha1");
+
+        addTransferListener(
+            new S3PresignedUrlTransferListener(this, HOURS_TO_EXPIRE));
+    }
+
+    /**
+     * Returns the bucket name.
+     *
+     * @return the bucket name
+     */
+    String getBucketName() {
+        return this.bucketName;
+    }
+
+    /**
+     * Returns the key prefix.
+     *
+     * @return the key prefix
+     */
+    String getKeyPrefix() {
+        return this.keyPrefix;
+    }
+
+    /**
+     * Returns the S3 client.
+     *
+     * @return the S3 client
+     */
+    AmazonS3 getS3() {
+        return this.s3;
     }
 
     /**
