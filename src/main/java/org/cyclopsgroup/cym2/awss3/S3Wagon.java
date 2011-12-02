@@ -14,7 +14,6 @@ import java.util.Set;
 
 import javax.activation.MimetypesFileTypeMap;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.maven.wagon.ConnectionException;
@@ -41,6 +40,9 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+
+import static com.google.common.io.ByteStreams.copy;
+import static com.google.common.io.Closeables.closeQuietly;
 
 /**
  * Amazon S3 wagon provider implementation
@@ -147,7 +149,7 @@ public class S3Wagon
         }
         finally
         {
-            IOUtils.closeQuietly( in );
+            closeQuietly( in );
         }
     }
 
@@ -297,7 +299,7 @@ public class S3Wagon
         try
         {
             fireGetStarted( resource, null );
-            IOUtils.copy( in, out );
+            copy( in, out );
             out.flush();
             out.close();
             fireGetCompleted( resource, null );
@@ -309,7 +311,7 @@ public class S3Wagon
         }
         finally
         {
-            IOUtils.closeQuietly( in );
+            closeQuietly( in );
         }
     }
 
