@@ -143,7 +143,7 @@ public class S3Wagon
             fireTransferDebug( "Uploading file " + inFile + " to  key " + key + " in S3 bucket " + bucketName );
             firePutStarted( resource, inFile );
 
-            // Upload file and allow everyone to read
+            // Upload file
             s3.putObject( bucketName, key, in, meta );
             firePutCompleted( resource, inFile );
         }
