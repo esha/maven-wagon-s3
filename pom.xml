@@ -19,13 +19,13 @@
     <inceptionYear>2011</inceptionYear>
     <scm>
         <connection>
-            scm:git:git://github.com/jiaqi/cym2/awss3
+            scm:git:git://github.com/celkins/cym2/awss3
         </connection>
         <developerConnection>
-            scm:git:git://github.com/jiaqi/cym2/awss3
+            scm:git:git://github.com/celkins/cym2/awss3
         </developerConnection>
         <url>
-            https://github.com/jiaqi/cym2/awss3
+            https://github.com/celkins/cym2/awss3
         </url>
     </scm>
     <dependencies>
