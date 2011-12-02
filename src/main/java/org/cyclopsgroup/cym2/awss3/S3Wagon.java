@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Properties;
 import java.util.Set;
 
 import javax.activation.MimetypesFileTypeMap;
@@ -60,27 +59,11 @@ public class S3Wagon
 
     private AmazonS3 s3;
 
-    private final Properties mimeTypes;
-
     /**
-     * Default constructor reads mime type mapping from generated properties file for later use
-     *
-     * @throws IOException Allows IO errors
+     * Default constructor
      */
     public S3Wagon()
-        throws IOException
     {
-        Properties props = new Properties();
-        InputStream in = getClass().getClassLoader().getResourceAsStream( "mimetypes.properties" );
-        try
-        {
-            props.load( in );
-            this.mimeTypes = props;
-        }
-        finally
-        {
-            IOUtils.closeQuietly( in );
-        }
     }
 
     /**
@@ -111,23 +94,10 @@ public class S3Wagon
         meta.setLastModified( new Date( lastModified ) );
 
         // Find mime type based on file extension
-        int lastDot = destination.lastIndexOf( '.' );
-        String mimeType = null;
-        if ( lastDot != -1 )
-        {
-            String ext = destination.substring( lastDot + 1, destination.length() );
-            mimeType = mimeTypes.getProperty( ext );
-        }
-        if ( mimeType == null )
-        {
-            mimeType = typeMap.getContentType( destination );
-        }
-        else
-        {
-            fireTransferDebug( "Mime type of " + destination + " is " + mimeType + " according to build-in types" );
-        }
+        String mimeType = typeMap.getContentType( destination );
         if ( mimeType != null )
         {
+            fireTransferDebug( "Mime type of " + destination + " is " + mimeType + " according to build-in types" );
             meta.setContentType( mimeType );
         }
 
