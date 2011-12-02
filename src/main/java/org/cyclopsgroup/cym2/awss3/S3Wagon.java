@@ -35,7 +35,6 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -110,7 +109,6 @@ public class S3Wagon
 
             // Upload file and allow everyone to read
             s3.putObject( bucketName, key, in, meta );
-            s3.setObjectAcl( bucketName, key, CannedAccessControlList.PublicRead );
             firePutCompleted( resource, inFile );
         }
         finally
