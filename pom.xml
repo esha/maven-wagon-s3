@@ -9,7 +9,7 @@
     <name>S3 Maven Extension</name>
     <description>Maven2 Wagon to support S3 repository</description>
     <url>http://wiki.cyclopsgroup.org/cym2:awss3</url>
-    <version>0.1</version>
+    <version>0.1-SNAPSHOT</version>
     <inceptionYear>2011</inceptionYear>
 
     <licenses>
