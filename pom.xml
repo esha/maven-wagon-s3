@@ -51,6 +51,16 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <preparationGoals>clean test</preparationGoals>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
