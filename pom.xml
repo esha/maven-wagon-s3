@@ -4,7 +4,7 @@
                       http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.celkins</groupId>
-    <artifactId>awss3-maven-wagon</artifactId>
+    <artifactId>maven-wagon-s3</artifactId>
     <packaging>jar</packaging>
     <name>S3 Maven Extension</name>
     <description>Maven2 Wagon to support S3 repository</description>
