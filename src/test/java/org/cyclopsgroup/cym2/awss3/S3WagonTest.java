@@ -28,6 +28,14 @@ public class S3WagonTest
      * @inheritDoc
      */
     @Override
+    protected int getTestRepositoryPort() {
+        return 0;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
     protected String getProtocol()
     {
         return "s3";
