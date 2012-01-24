@@ -8,7 +8,7 @@
         <version>0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.cyclopsgroup</groupId>
+    <groupId>com.github.celkins</groupId>
     <artifactId>awss3-maven-wagon</artifactId>
     <packaging>jar</packaging>
     <name>S3 Maven Extension</name>
