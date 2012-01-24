@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                       http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.github.celkins</groupId>
     <artifactId>maven-wagon-s3</artifactId>
+    <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Maven Wagon S3 Provider</name>
-    <description>Wagon Provider for Amazon Amazon Simple Storage Service (S3) repositories</description>
     <url>https://github.com/celkins/maven-wagon-s3</url>
-    <version>0.1-SNAPSHOT</version>
+    <description>Wagon Provider for Amazon Amazon Simple Storage Service (S3) repositories</description>
     <inceptionYear>2012</inceptionYear>
+
+    <properties>
+        <slf4j.version>1.5.11</slf4j.version>
+    </properties>
 
     <licenses>
         <license>
@@ -21,19 +24,11 @@
     </licenses>
 
     <scm>
-        <connection>
-            scm:git:git://github.com/celkins/maven-wagon-s3.git
-        </connection>
-        <developerConnection>
-            scm:git:git@github.com:celkins/maven-wagon-s3.git
-        </developerConnection>
-        <url>
-            https://github.com/celkins/maven-wagon-s3
-        </url>
+        <connection>scm:git:git://github.com/celkins/maven-wagon-s3.git</connection>
+        <developerConnection>scm:git:git@github.com:celkins/maven-wagon-s3.git</developerConnection>
+        <url>https://github.com/celkins/maven-wagon-s3</url>
     </scm>
-    <properties>
-        <slf4j.version>1.5.11</slf4j.version>
-    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -47,6 +42,7 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>javax.activation</groupId>
