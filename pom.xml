@@ -18,13 +18,13 @@
     <inceptionYear>2011</inceptionYear>
     <scm>
         <connection>
-            scm:git:git://github.com/celkins/cym2/awss3
+            scm:git:git://github.com/celkins/maven-wagon-s3.git
         </connection>
         <developerConnection>
-            scm:git:git://github.com/celkins/cym2/awss3
+            scm:git:git@github.com:celkins/maven-wagon-s3.git
         </developerConnection>
         <url>
-            https://github.com/celkins/cym2/awss3
+            https://github.com/celkins/maven-wagon-s3
         </url>
     </scm>
     <properties>
