@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
     <name>Maven Wagon S3 Provider</name>
     <url>https://github.com/esha/maven-wagon-s3</url>
-    <description>Wagon Provider for Amazon Amazon Simple Storage Service (S3) repositories</description>
+    <description>Wagon Provider for Amazon Simple Storage Service (S3) repositories</description>
     <inceptionYear>2012</inceptionYear>
 
     <properties>
