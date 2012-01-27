@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.celkins</groupId>
+    <groupId>com.esha</groupId>
     <artifactId>maven-wagon-s3</artifactId>
     <version>0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Maven Wagon S3 Provider</name>
-    <url>https://github.com/celkins/maven-wagon-s3</url>
+    <url>https://github.com/esha/maven-wagon-s3</url>
     <description>Wagon Provider for Amazon Amazon Simple Storage Service (S3) repositories</description>
     <inceptionYear>2012</inceptionYear>
 
@@ -25,9 +25,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/celkins/maven-wagon-s3.git</connection>
-        <developerConnection>scm:git:git@github.com:celkins/maven-wagon-s3.git</developerConnection>
-        <url>https://github.com/celkins/maven-wagon-s3</url>
+        <connection>scm:git:git://github.com/esha/maven-wagon-s3.git</connection>
+        <developerConnection>scm:git:git@github.com:esha/maven-wagon-s3.git</developerConnection>
+        <url>https://github.com/esha/maven-wagon-s3</url>
     </scm>
 
     <build>
