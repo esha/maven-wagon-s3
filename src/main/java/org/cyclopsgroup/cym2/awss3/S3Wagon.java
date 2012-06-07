@@ -1,7 +1,6 @@
 package org.cyclopsgroup.cym2.awss3;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +33,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -405,7 +405,7 @@ public class S3Wagon
     {
         try
         {
-            doPutFromStream( new FileInputStream( source ), source, destination, source.length(), source.lastModified() );
+            doPutFromStream( new RepeatableFileInputStream( source ), source, destination, source.length(), source.lastModified() );
         }
         catch ( FileNotFoundException e )
         {
