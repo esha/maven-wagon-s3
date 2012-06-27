@@ -4,7 +4,7 @@
 
     <groupId>com.esha</groupId>
     <artifactId>maven-wagon-s3</artifactId>
-    <version>0.3</version>
+    <version>0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Maven Wagon S3 Provider</name>
     <url>https://github.com/esha/maven-wagon-s3</url>
